@@ -47,6 +47,34 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="entry.js" />
+    <Content Include="JS\application.js" />
+    <Content Include="JS\button.run.js" />
+    <Content Include="JS\button.save.js" />
+    <Content Include="JS\button\run.js" />
+    <Content Include="JS\button\save.js" />
+    <Content Include="JS\compiled.js" />
+    <Content Include="JS\di.js" />
+    <Content Include="JS\di\options.js" />
+    <Content Include="JS\dom.js" />
+    <Content Include="JS\drawer\grid.js" />
+    <Content Include="JS\drawer\output.js" />
+    <Content Include="JS\drawer\progress.js" />
+    <Content Include="JS\drawer\std.js" />
+    <Content Include="JS\graber.js" />
+    <Content Include="JS\grid.js" />
+    <Content Include="JS\guidirector.js" />
+    <Content Include="JS\listen.js" />
+    <Content Include="JS\main.js" />
+    <Content Include="JS\module.js" />
+    <Content Include="JS\outputbox.js" />
+    <Content Include="JS\process.js" />
+    <Content Include="JS\progress.js" />
+    <Content Include="JS\utils.js" />
+    <Content Include="JS\widget.js" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
