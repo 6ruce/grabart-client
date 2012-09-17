@@ -43,14 +43,24 @@ namespace GrabArtDeploy
     {
         public string Build(string content)
         {
-            Match match = Regex.Match(content, @"\('\[(.+)\]'\)");
-            Console.Write("Found matches: ");
-            for (int i = 1; i < match.Groups.Count; i++) {
-                string module = match.Groups[i].Value;
-                Console.Write(module + " ");
-                Build(new FileOperator(module.Replace('.','/') + ".js").ReadAll());
+            MatchCollection matchCollection = Regex.Matches(content, @"\('\[([^']+)\]'\)");
+            foreach (Match match in matchCollection) {
+                Console.Write("Found matches: ");
+                for (int i = 1; i < match.Groups.Count; i++)
+                {
+                    string module = match.Groups[i].Value;
+                    Console.Write(module + " ");
+                }
+                Console.WriteLine();
+
+                for (int i = 1; i < match.Groups.Count; i++)
+                {
+                    string module = match.Groups[i].Value;
+                    string buildResult = Build(new FileOperator(module.Replace('.', '/') + ".js").ReadAll());
+                    content = content.Replace("('[" + module + "]')", buildResult);
+                }
             }
-            Console.WriteLine();
+            
             return content;
         }
     }

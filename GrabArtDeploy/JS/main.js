@@ -9,7 +9,6 @@
 // ==/UserScript==
 
 ('[module]')
-console.log('test');
 
 var app = new GRABART.GrabApp();
 var di = new GRABART.DependencyInjector(GRABART.DIOptions);
