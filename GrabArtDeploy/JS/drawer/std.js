@@ -45,7 +45,7 @@ var StdDrawer = function() {
             mainItem = _createMainView();
             displayItem = _createDisplayView();
         }
-        console.log(visible);
+
         if (visible) {
             this.show();
         } else {

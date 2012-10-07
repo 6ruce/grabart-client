@@ -54,7 +54,8 @@ var OutputDrawer = function() {
     this.setWidth    = function(wd){ width = wd;};
     this.setHeight   = function(hd){ height = hd;};
     this.setTop      = function(tp){ top = tp;};
-    this.setLeft     = function(lt){ left = lt;};
+    this.setLeft     = function (lt) { left = lt; };
+    this.setVisible  = function (vs) { visible = vs; };
 
     this.getWidth    = function(){ return width;};
     this.getHeight   = function(){ return height;};

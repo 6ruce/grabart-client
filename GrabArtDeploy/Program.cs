@@ -10,7 +10,7 @@ namespace GrabArtDeploy
     {
         static void Main(string[] args)
         {
-            new FileOperator("../entry.js").WriteAll(new Builder().Build(new FileOperator("main.js").ReadAll()));
+            new FileOperator(@"C:\Users\bruce\AppData\Roaming\Mozilla\Firefox\Profiles\nahd6ha2.default\gm_scripts\Test\Test.user.js").WriteAll(new Builder().Build(new FileOperator("main.js").ReadAll()));
             Console.ReadKey();
         }
     }
@@ -35,7 +35,7 @@ namespace GrabArtDeploy
         public void WriteAll(string text)
         {
             Console.WriteLine("->File `" + fileName + "` opened for writing.");
-            File.WriteAllText(PRE_PATH + fileName, text);
+            File.WriteAllText(fileName, text);
         }
     }
 

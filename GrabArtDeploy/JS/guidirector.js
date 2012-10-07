@@ -43,7 +43,7 @@ var GuiDirector = function(app){
             output.addText('[' + data.length + ',' + data[0].length + ']');
             for (i in data){
                 for (j in data[i]){
-                    output.addText(data[i][j]);
+                    output.addText(data[i][j] + '#');
                 }
             }
         };

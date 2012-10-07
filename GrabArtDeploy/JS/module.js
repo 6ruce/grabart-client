@@ -53,7 +53,9 @@ var GRABART = (function() {
         DrawerGrid: DrawerGrid,
         StdDrawer: StdDrawer,
         StdDOMOperator: StdDOMOperator,
-        GrabApp: GrabApp
+        GrabApp: GrabApp,
+        Widget: Widget,
+        IListen: IListen
     };
 
 }());

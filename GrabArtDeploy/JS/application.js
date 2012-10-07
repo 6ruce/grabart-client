@@ -1,4 +1,4 @@
-var GrabApp = function(){
+var GrabApp = function () {
     var guiDirector,
         processes = {};
     this.run = function () {

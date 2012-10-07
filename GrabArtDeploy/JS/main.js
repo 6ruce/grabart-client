@@ -1,25 +1,33 @@
 // ==UserScript==
-// @name       GrabArt
-// @namespace  http://use.i.E.your.homepage/
-// @version    0.8
-// @description  grab separated into pieces `googleart` pictures
-// @match      http://www.googleartproject.com/collection*
-// @copyright  2012+, bruce
-// @require http://grabart.my/
+// @name        GrabArt
+// @namespace   GrabArtSpace
+// @version     1
+// @description grab separated into pieces `googleart` pictures
+// @match       http://www.googleartproject.com/collection/*
 // ==/UserScript==
 
 ('[module]')
+('[tests.suit]')
 
-var app = new GRABART.GrabApp();
-var di = new GRABART.DependencyInjector(GRABART.DIOptions);
+try {
+    var tests = new GRABART.TestsSuit();
+    tests.run();
 
-app.setGuiDirector(new GRABART.GuiDirector(app));
+    var app = new GRABART.GrabApp();
+    var di = new GRABART.DependencyInjector(GRABART.DIOptions);
 
-app.addProcess(di.get('Graber'));
-app.addWidget(di.get('HintWindow').addWidget(di.get('SaveButton'))
-                                  .addWidget(di.get('ProgressBar')));
-app.addWidget(di.get('OutputBox'));
-app.addWidget(di.get('NavigationWindow').addWidget(di.get('Grid')));
-app.addWidget(di.get('ActionWindow').addWidget(di.get('RunButton')));
+    app.setGuiDirector(new GRABART.GuiDirector(app));
 
-app.run();
+    app.addProcess(di.get('Graber'));
+    app.addWidget(di.get('HintWindow').addWidget(di.get('SaveButton'))
+                                      .addWidget(di.get('ProgressBar')));
+    app.addWidget(di.get('OutputBox'));
+    app.addWidget(di.get('NavigationWindow').addWidget(di.get('Grid')));
+    app.addWidget(di.get('ActionWindow').addWidget(di.get('RunButton')));
+
+    app.run();
+
+} catch (err) {
+    console.log(' ');
+    console.log('GENERAL ERROR: ', err);
+}
